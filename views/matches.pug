@@ -1,0 +1,41 @@
+extends index.pug
+
+block content
+    h2 Matches
+    form(action='/matches', method="get")
+        div(class='form-group row')
+            label(class='col-2 col-form-label') Earliest Start Date
+            div(class='col-3')
+                input(type="date", name="startDate" class="form-control" value=startDate)
+            label(class='col-2 col-form-label') Latest End Date
+            div(class='col-3')
+                input(type="date", name="endDate" class="form-control" value=endDate)
+            input(type="submit", value="Filter" class='btn btn-primary')
+    div(style={width: '100%', height: '90%', "background-color": 'orange', 'border-radius': '10px', 'margin-bottom': '15px'})
+        div(class='display-grid')
+            div(class='display-row' style={"margin-bottom": "20px"})
+                div(class='display-cell') 
+                    h4 Tournament
+                div(class='display-cell') 
+                    h4 Stage
+                div(class='display-cell') 
+                    h4 Start Time
+                div(class='display-cell') 
+                    h4 End Time
+                div(class='display-cell') 
+                    h4 Team 1
+                div(class='display-cell') 
+                    h4 Score
+                div(class='display-cell') 
+                    h4 Team 2
+
+            each match in matches
+                div(class='display-row')
+                    div(class='display-cell') (#{match.year}) #{match.title}
+                    div(class='display-cell') #{match.stage}
+                    div(class='display-cell') #{moment(match.starttime).format('MMM DD, YYYY hh:mm A')}
+                    div(class='display-cell') #{moment(match.endtime).format('MMM DD, YYYY hh:mm A')}
+                    div(class='display-cell') #{match.team1}
+                    div(class='display-cell') #{match.score1} - #{match.score2}
+                    div(class='display-cell') #{match.team2}
+                    

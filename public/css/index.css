@@ -1,0 +1,120 @@
+#sidebar {
+  position: absolute;
+  width: 15vw;
+  height: 100%;
+  margin: 0;
+  top: 0;
+  background-color: orange;
+  left: -20vw;
+  z-index: 3;
+}
+#close-sidebar,
+#close-delete-popup {
+  right: 0;
+  position: absolute;
+  height: 50px;
+  cursor: pointer;
+}
+
+#open-sidebar {
+  left: 5px;
+  top: 5px;
+  position: absolute;
+  height: 50px;
+  cursor: pointer;
+}
+
+.sidebar-btn {
+  width: 15vw;
+  height: 8vh;
+  border: 1px solid black;
+  border-radius: 5px;
+  flex: 1;
+  margin: 0px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: black;
+  text-decoration: none !important;
+}
+
+.sidebar-btn:hover {
+  color: black !important;
+}
+
+#main-content {
+  width: 90vw;
+  height: 90vh;
+  position: absolute;
+  top: 5vh;
+  left: 5vw;
+}
+
+li {
+  list-style: none;
+}
+
+.display-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.display-row {
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.display-cell {
+  width: 25%;
+  text-align: center;
+}
+.players-cell {
+  width: 22.5%;
+  text-align: center;
+}
+
+#create-tournament-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: orange;
+}
+
+#new-tournament-popup {
+  width: 50%;
+  height: 90%;
+  left: 25%;
+  top: 5%;
+  position: absolute;
+  border: 1px solid black;
+  background-color: orange;
+  border-radius: 20px;
+}
+
+#dropdown-toggle {
+}
+
+.dropdown-btn {
+  z-index: 2;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+#delete-popup {
+  position: absolute;
+  width: 30%;
+  height: 20%;
+  border: 1px solid black;
+  left: 35%;
+  top: 30%;
+  border-radius: 5px;
+  background-color: orangered;
+}

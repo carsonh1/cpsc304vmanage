@@ -1,0 +1,33 @@
+extends index.pug
+
+block content
+    h2 Tournaments
+    form(action="/tournaments", method="post")
+        input(type="submit", value="Get Players Registered in Checked Tournaments", class='btn dim mb2', style={'border': '1px solid black'})
+        div(style={width: '100%', height: '90%', "background-color": 'orange', 'border-radius': '10px'})
+            div(class='display-grid')
+                div(class='display-row' style={"margin-bottom": "20px"})
+                    div(class='display-cell w-15') 
+                        h4 Select
+                    div(class='display-cell w-15')
+                        h4 Title
+                    div(class='display-cell w-15') 
+                        h4 Year
+                    div(class='display-cell w-15') 
+                        h4 Start Date
+                    div(class='display-cell w-15') 
+                        h4 End Date
+                    div(class='display-cell w-15') 
+                        h4 Teams Participating
+                    div(class='display-cell w-10 mr4') 
+
+                each tournament in tournaments
+                    div(class='display-row') 
+                        div(class='display-cell w-15') 
+                            input(type="checkbox", name="tournamentIds[]", value=tournament.tournamentid)
+                        div(class='display-cell w-15') #{tournament.title}
+                        div(class='display-cell w-15') #{tournament.year}
+                        div(class='display-cell w-15') #{moment(tournament.startdate).format('MMM DD, YYYY')}
+                        div(class='display-cell w-15') #{moment(tournament.enddate).format('MMM DD, YYYY')}
+                        div(class='display-cell w-15') #{tournament.teamscount}
+                        a(href=`/tournaments/${tournament.tournamentid}/completedteams` class='display-cell btn w-10 mr3 dim' style={'border': '1px solid black'}) View Valid Teams

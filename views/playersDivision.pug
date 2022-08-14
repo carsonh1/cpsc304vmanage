@@ -1,0 +1,19 @@
+extends index.pug
+
+block content
+    h2 Players in Selected Tournaments
+    div(style={height: '95%', "background-color": 'orange', 'border-radius': '10px', 'margin-bottom': '15px'})
+        div(class='display-grid' style={'overflow': 'auto', 'height': '100%'})
+            div(class='display-row' style={"margin-bottom": "20px"})
+                div(class='display-cell') 
+                    h4 Player Name
+                div(class='display-cell') 
+                    h4 Height (cm)
+                div(class='display-cell') 
+                    h4 Date of Birth
+            
+            each player in players
+                div(class='display-row')
+                    div(class='display-cell') #{player.firstname} #{player.lastname}
+                    div(class='display-cell') #{player.height}
+                    div(class='display-cell') #{moment(player.dateofbirth).format('MMM DD, YYYY')}

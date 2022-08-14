@@ -1,0 +1,19 @@
+extends index.pug
+
+block content
+    h2 Teams That Have A Complete Roster
+    div(style={width: '100%', height: '90%', "background-color": 'orange', 'border-radius': '10px', 'margin-bottom': '15px'})
+        div(class='display-grid')
+            div(class='display-row' style={"margin-bottom": "20px"})
+                div(class='display-cell') 
+                    h4 Team Name
+                div(class='display-cell') 
+                    h4 Phone Number
+                div(class='display-cell') 
+                    h4 Email Address
+            
+            each team in teams
+                div(class='display-row')
+                    div(class='display-cell') #{team.name}
+                    div(class='display-cell') #{team.phonenumber}
+                    div(class='display-cell') #{team.emailaddress}
